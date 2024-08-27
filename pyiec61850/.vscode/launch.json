@@ -1,0 +1,66 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "Python: Debug with C/C++",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/direct_control.py",
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "env": {},
+        "stopOnEntry": false,
+        "debugOptions": [
+            "RedirectOutput"
+        ]
+    },
+
+	{
+            "name": "C++ Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "/home/by/software/libiec61850/build/src/libiec61850.so", 
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",  // GDB 调试器路径
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true
+            }
+        }
+    ]
+    //     {
+    //     "name": "C++ Attach",
+    //     "type": "cppdbg",
+    //     "request": "attach",
+    //     "program": "/home/by/software/libiec61850/build/src/libiec61850.so", // 如果是静态库，可以是Python解释器
+    //     "processId": "${command:pickProcess}",
+    //     "MIMode": "gdb",
+    //     "miDebuggerPath": "/usr/bin/gdb", // 适用于Linux或MacOS
+    //     "setupCommands": [
+    //         {
+    //         "description": "Enable pretty-printing for gdb",
+    //         "text": "-enable-pretty-printing",
+    //         "ignoreFailures": true
+    //     }
+    //     ],
+    //     "cwd": "${workspaceFolder}",
+    //     "externalConsole": false,
+    //     "logging": {
+    //         "engineLogging": true,
+    //         "trace": true,
+    //         "traceResponse": true
+    //     }
+    // }
+    // ]
+}

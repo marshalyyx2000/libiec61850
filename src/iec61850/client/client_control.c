@@ -515,7 +515,7 @@ ControlObjectClient_operate(ControlObjectClient self, MmsValue* ctlVal, uint64_t
 
     if (mmsError != MMS_ERROR_NONE) {
         if (DEBUG_IED_CLIENT)
-            printf("IED_CLIENT: operate failed!\n");
+	  printf("IED_CLIENT: operate failed! error is: %d\n", mmsError);
 
         goto exit_function;
     }
